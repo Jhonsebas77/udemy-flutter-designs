@@ -8,9 +8,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      initialRoute: 'basic_design',
+      initialRoute: 'scroll_design',
       routes: {
         'basic_design': (_) => BasicDesignScreen(),
+        'scroll_design': (_) => ScrollScreen(),
       },
     );
   }
