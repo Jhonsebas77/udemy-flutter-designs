@@ -34,16 +34,37 @@ class MainContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text('Hola Mundo'),
-        Text('Hola Mundscxdfvsdgsdfo'),
-        Text('Hola Mundo'),
-        Text('Hola Mundo'),
-        Text('Hola Mundo'),
-      ],
+    final textStyle = TextStyle(
+      fontSize: 60,
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+    );
+    return SafeArea(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 30,
+          ),
+          Text(
+            '11 º',
+            style: textStyle,
+          ),
+          Text(
+            'Miercoles',
+            style: textStyle,
+          ),
+          Expanded(
+            child: Container(),
+          ),
+          Icon(
+            Icons.keyboard_arrow_down,
+            size: 100,
+            color: Colors.white,
+          )
+        ],
+      ),
     );
   }
 }
