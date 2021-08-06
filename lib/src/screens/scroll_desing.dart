@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import '../utils/responsive_util.dart';
 
 class ScrollScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final boxDecoration = BoxDecoration(
+    BoxDecoration boxDecoration = BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        stops: [
+        stops: <double>[
           0.5,
           0.5,
         ],
-        colors: [
+        colors: <Color>[
           Color(0xff5EE8C5),
           Color(0xff30BAD6),
         ],
@@ -23,7 +24,7 @@ class ScrollScreen extends StatelessWidget {
         child: PageView(
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
-          children: [
+          children: <Widget>[
             Page1(),
             Page2(),
           ],
@@ -39,14 +40,15 @@ class Page1 extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        BackgroundScroll(),
-        MainContainer(),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Stack(
+        children: <Widget>[
+          if (ResponsiveWidget.isSmallScreen(context))
+            BackgroundScroll()
+          else
+            Container(),
+          MainContainer(),
+        ],
+      );
 }
 
 class BackgroundScroll extends StatelessWidget {
@@ -55,13 +57,11 @@ class BackgroundScroll extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      alignment: Alignment.topCenter,
-      child: Image.asset('assets/img/scroll-1.png'),
-    );
-  }
+  Widget build(BuildContext context) => Container(
+        height: double.infinity,
+        alignment: Alignment.topCenter,
+        child: Image.asset('assets/img/scroll-1.png'),
+      );
 }
 
 class MainContainer extends StatelessWidget {
@@ -71,7 +71,7 @@ class MainContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(
+    TextStyle textStyle = TextStyle(
       fontSize: 60,
       color: Colors.white,
       fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class MainContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: <Widget>[
           SizedBox(
             height: 30,
           ),
@@ -110,25 +110,14 @@ class Page2 extends StatelessWidget {
   const Page2({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xff30BAD6),
-      child: Center(
-        child: TextButton(
-          onPressed: () {},
-          child: Text(
-            'Bienvenido',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
-          ),
-          style: TextButton.styleFrom(
-            backgroundColor: Color(0xFF308CC9),
-            shape: StadiumBorder(),
+  Widget build(BuildContext context) => Container(
+        color: Color(0xff30BAD6),
+        child: Center(
+          child: ResponsiveWidget(
+            smallScreen: Text('I smallScreen'),
+            mediumScreen: Text('I mediumScreen'),
+            largeScreen: Text('I largeScreen'),
           ),
         ),
-      ),
-    );
-  }
+      );
 }
