@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import '../utils/responsive_util.dart';
+part of udemy.fh.desings;
 
 class BasicDesignScreen extends StatelessWidget {
+  const BasicDesignScreen({Key? key}) : super(key: key);
+  static const String route = '/basic';
   @override
   Widget build(BuildContext context) => Scaffold(
         body: Column(

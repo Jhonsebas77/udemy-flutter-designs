@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
     return MaterialApp(
+      theme: ThemeData.dark(),
       title: 'Material App',
-      initialRoute: 'scroll_design',
+      initialRoute: 'home_screen',
       routes: <String, Widget Function(BuildContext)>{
         'home_screen': (_) => HomeScreen(),
         'basic_design': (_) => BasicDesignScreen(),

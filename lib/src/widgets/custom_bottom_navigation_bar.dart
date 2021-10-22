@@ -5,6 +5,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.white,
         backgroundColor: Color.fromRGBO(55, 57, 84, 1),
@@ -16,6 +18,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.today_outlined),
             label: 'today',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.verified_user),
+            label: 'user',
           ),
         ],
       );

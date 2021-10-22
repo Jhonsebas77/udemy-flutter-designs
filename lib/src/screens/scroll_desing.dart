@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import '../utils/responsive_util.dart';
+part of udemy.fh.desings;
 
 class ScrollScreen extends StatelessWidget {
+  const ScrollScreen({Key? key}) : super(key: key);
+  static const String route = '/scroll';
   @override
   Widget build(BuildContext context) {
     BoxDecoration boxDecoration = BoxDecoration(
