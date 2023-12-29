@@ -9,7 +9,7 @@ class BasicDesignScreen extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Image(
-                image: AssetImage(
+                image: const AssetImage(
                   'assets/img/landscape.jpeg',
                 ),
                 fit: ResponsiveWidget.isLargeScreen(context)
@@ -17,15 +17,15 @@ class BasicDesignScreen extends StatelessWidget {
                     : BoxFit.cover,
               ),
             ),
-            Title(),
-            ButtomSection(),
-            Padding(
-              padding: const EdgeInsets.all(8),
+            const Title(),
+            const ButtomSection(),
+            const Padding(
+              padding: EdgeInsets.all(8),
               child: Text(
-                'Id reprehenderit occaecat exercitation deserunt et commodo anim aliquip esse et. Anim nisi cillum laborum qui cillum cillum labore. Ullamco quis veniam proident eu fugiat adipisicing. Consequat fugiat tempor excepteur dolore anim aliquip non enim. Enim enim deserunt deserunt pariatur ex elit pariatur ut ipsum nisi. Reprehenderit cupidatat esse amet proident incididunt sit excepteur dolore proident consectetur anim anim ad nostrud.',
+                '''Id reprehenderit occaecat exercitation deserunt et commodo anim aliquip esse et. Anim nisi cillum laborum qui cillum cillum labore. Ullamco quis veniam proident eu fugiat adipisicing. Consequat fugiat tempor excepteur dolore anim aliquip non enim. Enim enim deserunt deserunt pariatur ex elit pariatur ut ipsum nisi. Reprehenderit cupidatat esse amet proident incididunt sit excepteur dolore proident consectetur anim anim ad nostrud.''',
                 textAlign: TextAlign.justify,
               ),
-            )
+            ),
           ],
         ),
       );
@@ -38,13 +38,13 @@ class Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        margin: EdgeInsets.symmetric(
+        margin: const EdgeInsets.symmetric(
           horizontal: 30,
           vertical: 10,
         ),
         child: Row(
           children: <Widget>[
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
@@ -67,11 +67,11 @@ class Title extends StatelessWidget {
               )
             else
               Container(),
-            Icon(
+            const Icon(
               Icons.star_rate,
               color: Colors.red,
             ),
-            Text('41'),
+            const Text('41'),
           ],
         ),
       );
@@ -83,7 +83,7 @@ class ButtomSection extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Row(
+  Widget build(BuildContext context) => const Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           ButtomItem(
@@ -120,7 +120,7 @@ class ButtomItem extends StatelessWidget {
           if (!ResponsiveWidget.isSmallScreen(context))
             Text(
               name,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.blue,
               ),
             )

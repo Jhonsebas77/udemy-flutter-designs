@@ -5,7 +5,7 @@ class ScrollScreen extends StatelessWidget {
   static const String route = '/scroll';
   @override
   Widget build(BuildContext context) {
-    BoxDecoration boxDecoration = BoxDecoration(
+    BoxDecoration boxDecoration = const BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
@@ -20,12 +20,12 @@ class ScrollScreen extends StatelessWidget {
       ),
     );
     return Scaffold(
-      body: Container(
+      body: DecoratedBox(
         decoration: boxDecoration,
         child: PageView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
-          children: <Widget>[
+          children: const <Widget>[
             Page1(),
             Page2(),
           ],
@@ -44,10 +44,10 @@ class Page1 extends StatelessWidget {
   Widget build(BuildContext context) => Stack(
         children: <Widget>[
           if (ResponsiveWidget.isSmallScreen(context))
-            BackgroundScroll()
+            const BackgroundScroll()
           else
             Container(),
-          MainContainer(),
+          const MainContainer(),
         ],
       );
 }
@@ -72,7 +72,7 @@ class MainContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = TextStyle(
+    TextStyle textStyle = const TextStyle(
       fontSize: 60,
       color: Colors.white,
       fontWeight: FontWeight.bold,
@@ -82,7 +82,7 @@ class MainContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Text(
@@ -96,11 +96,11 @@ class MainContainer extends StatelessWidget {
           Expanded(
             child: Container(),
           ),
-          Icon(
+          const Icon(
             Icons.keyboard_arrow_down,
             size: 100,
             color: Colors.white,
-          )
+          ),
         ],
       ),
     );
@@ -111,7 +111,7 @@ class Page2 extends StatelessWidget {
   const Page2({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => const ColoredBox(
         color: Color(0xff30BAD6),
         child: Center(
           child: ResponsiveWidget(

@@ -7,7 +7,7 @@ class CardTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Table(
-        children: <TableRow>[
+        children: const <TableRow>[
           TableRow(
             children: <Widget>[
               _SingleCard(
@@ -94,7 +94,7 @@ class _SingleCard extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               text,
               style: TextStyle(color: color),
@@ -121,7 +121,7 @@ class _CardBackground extends StatelessWidget {
               height: 180,
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(62, 66, 107, 0.7),
+                  color: const Color.fromRGBO(62, 66, 107, 0.7),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: child,

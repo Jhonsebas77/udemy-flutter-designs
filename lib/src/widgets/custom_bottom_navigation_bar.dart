@@ -9,8 +9,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
         showUnselectedLabels: false,
         selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.white,
-        backgroundColor: Color.fromRGBO(55, 57, 84, 1),
-        items: <BottomNavigationBarItem>[
+        backgroundColor: const Color.fromRGBO(55, 57, 84, 1),
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_view_day),
             label: 'Calendar',

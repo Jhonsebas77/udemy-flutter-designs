@@ -14,17 +14,19 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth > 1200) {
-          return largeScreen ?? Container();
-        } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
-          //if medium screen not available, then return large screen
-          return mediumScreen ?? largeScreen ?? Container();
-        } else {
-          //if small screen implementation not available, then return large screen
-          return smallScreen ?? largeScreen ?? Container();
-        }
-      });
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth > 1200) {
+            return largeScreen ?? Container();
+          } else if (constraints.maxWidth > 800 &&
+              constraints.maxWidth < 1200) {
+            //if medium screen not available, then return large screen
+            return mediumScreen ?? largeScreen ?? Container();
+          } else {
+            //if small screen implementation not available, then return large screen
+            return smallScreen ?? largeScreen ?? Container();
+          }
+        },
+      );
 
   //Making these methods static, so that they can be used as accessed from other widgets
 

@@ -4,7 +4,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   static const String route = '/home';
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => const Scaffold(
         body: Stack(
           children: <Widget>[
             Background(),
@@ -21,7 +21,7 @@ class _HomeBody extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => SafeArea(
+  Widget build(BuildContext context) => const SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
